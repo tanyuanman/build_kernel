@@ -1,0 +1,21 @@
+name: build_android_kernel
+
+on:
+  watch:
+    types: [started]
+    
+jobs:
+  build:
+    runs-on: ubuntu-18.4
+    steps:
+    - name: Initialization environment
+      run: |
+            sudo apt-get -y update
+            sudo apt-get install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk language-pack-zh-hans python
+  
+    - name: Make Kernel
+      run: |
+            cd ~
+            sudo curl -sL "https://raw.githubusercontent.com/tao1996/build_kernel/master/build_kernel.sh" > build-kernel.sh
+            sudo chmod 777 build-kernel.sh
+            sudo bash ./build-kernel.sh
