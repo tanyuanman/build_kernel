@@ -19,3 +19,9 @@ jobs:
             sudo curl -sL "https://raw.githubusercontent.com/tao1996/build_kernel/master/build_kernel.sh" > build-kernel.sh
             sudo chmod 777 build-kernel.sh
             sudo bash ./build-kernel.sh
+
+    - name : Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: blu_spark_makiras_modified.zip
+        path: /home/runner/AnyKernel/
