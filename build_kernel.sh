@@ -10,9 +10,9 @@ git clone --depth 69 https://gitlab.com/Vijaymalav564/aarch64-linux-android-4.9.
 git clone --depth 69 https://gitlab.com/Vijaymalav564/arm-linux-androideabi-4.9.git gcc-arm
 	
 echo "|| Cloning KERNEL ||"
-cd gcc
+cd gcc-arm
 
-tar -cvpzf /home/runner/gcc64.tar.gz ./
+tar -cvpzf /home/runner/gcc32.tar.gz ./
 
 #
 echo
