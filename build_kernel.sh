@@ -6,7 +6,9 @@ KERNEL_DEFCONFIG=sdm660_perf_defconfig
 
 #谷歌GCC4.9
 echo "|| Cloning GCC ||"
-#git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b ndk-release-r21
+git clone --depth 69 https://gitlab.com/Vijaymalav564/aarch64-linux-android-4.9.git gcc
+git clone --depth 69 https://gitlab.com/Vijaymalav564/arm-linux-androideabi-4.9.git gcc-arm
+	
 echo "|| Cloning KERNEL ||"
 git clone $KERNEL_URL Kernel
 
