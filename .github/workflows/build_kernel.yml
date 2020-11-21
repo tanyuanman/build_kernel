@@ -6,7 +6,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-18.4
+    runs-on: ubuntu-18.04
     steps:
     - name: Initialization environment
       run: |
