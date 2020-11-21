@@ -19,5 +19,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: blu_spark_makiras_modified.zip
-        path: /home/runner/gcc64.tar.gz
+        name: blu_spark_makiras_modified32.zip
+        path: /home/runner/gcc32.tar.gz
