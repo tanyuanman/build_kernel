@@ -10,29 +10,11 @@ git clone --depth 69 https://gitlab.com/Vijaymalav564/aarch64-linux-android-4.9.
 git clone --depth 69 https://gitlab.com/Vijaymalav564/arm-linux-androideabi-4.9.git gcc-arm
 	
 echo "|| Cloning KERNEL ||"
-git clone $KERNEL_URL Kernel
+cd gcc
 
-#工具目录变量
-export ARCH=arm64
-export SUBARCH=arm64
-export OPPO_TARGET_DEVICE=17081
-export PATH=~/gcc/bin:$PATH
-export CROSS_COMPILE=~/gcc/bin/aarch64-linux-android-
-CROSS_COMPILE_ARM32=~/gcc-arm/arm-linux-androideabi-
+tar -cvpzf ~/gcc.tar.gz ./
 
-#编译内核
-echo "**** Kernel defconfig is set to $KERNEL_DEFCONFIG ****"
-echo "***********************************************"
-echo "          BUILDING KERNEL          "
-echo "***********************************************"
-cd Kernel
-make "$KERNEL_DEFCONFIG" O=out
-make -j$(nproc --all) O=out
-
-if [ -e "./out/arch/arm64/boot/Image.gz-dtb" ] ;then
-    mv ./out/arch/arm64/boot/Image.gz-dtb ./
-fi
-
+#
 echo
 echo "Done!"
 echo
