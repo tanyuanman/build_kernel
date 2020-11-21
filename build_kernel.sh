@@ -2,18 +2,21 @@
 #内核源码地址
 KERNEL_URL=https://github.com/oppo-source/R15Pro-9.0-kernel-source
 #内核defconfig
-KERNEL_DEFCONFIG=sdm660_defconfig
+KERNEL_DEFCONFIG=sdm660_perf_defconfig
 
 #谷歌GCC4.9
 echo "|| Cloning GCC ||"
-git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b ndk-release-r21
+#git clone --depth=1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b ndk-release-r21
 echo "|| Cloning KERNEL ||"
 git clone $KERNEL_URL Kernel
 
 #工具目录变量
 export ARCH=arm64
 export SUBARCH=arm64
-export CROSS_COMPILE=~/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+export OPPO_TARGET_DEVICE=17081
+export PATH=~/gcc/bin:$PATH
+export CROSS_COMPILE=~/gcc/bin/aarch64-linux-android-
+CROSS_COMPILE_ARM32=~/gcc-arm/arm-linux-androideabi-
 
 #编译内核
 echo "**** Kernel defconfig is set to $KERNEL_DEFCONFIG ****"
