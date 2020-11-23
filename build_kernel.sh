@@ -7,9 +7,9 @@ KERNEL_DEFCONFIG=sdm660_perf_defconfig
 #谷歌GCC4.9
 echo "|| Cloning GCC ||"
 
-git clone -b hmp https://github.com/vijaymalav564/lockdown_kernel_realme2pro gcc
+git clone -b master https://github.com/redfeast/android_kernel_oppo_RMX1801 gcc
 
-cd ./gcc/drivers/staging
+cd ./gcc
 tar -cvpzf /home/runner/gcc32.tar.gz ./
 
 #
