@@ -6,11 +6,18 @@ KERNEL_DEFCONFIG=sdm660_perf_defconfig
 
 #谷歌GCC4.9
 echo "|| Cloning GCC ||"
-git clone --depth 69 https://gitlab.com/Vijaymalav564/aarch64-linux-android-4.9.git gcc
-git clone --depth 69 https://gitlab.com/Vijaymalav564/arm-linux-androideabi-4.9.git gcc-arm
-	
+mkdir gcc
+cd gcc
+mkdir arm32-gcc
+cd arm32-gcc
+git clone -b eleven https://github.com/AOSiP/platform_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 --depth 1
+cd ..
+mkdir arm64-gcc
+cd arm64-gcc
+git clone -b eleven https://github.com/AOSiP/platform_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 --depth 1
+cd ..
 echo "|| Cloning KERNEL ||"
-cd gcc-arm
+cd gcc
 
 tar -cvpzf /home/runner/gcc32.tar.gz ./
 
