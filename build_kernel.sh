@@ -6,11 +6,10 @@ KERNEL_DEFCONFIG=sdm660_perf_defconfig
 
 #谷歌GCC4.9
 echo "|| Cloning GCC ||"
-mkdir gcc
-cd gcc
-git clone -b hmp https://github.com/vijaymalav564/lockdown_kernel_realme2pro
 
+git clone -b hmp https://github.com/vijaymalav564/lockdown_kernel_realme2pro gcc
 
+cd ./gcc/drivers/staging
 tar -cvpzf /home/runner/gcc32.tar.gz ./
 
 #
