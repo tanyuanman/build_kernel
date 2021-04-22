@@ -12,7 +12,7 @@ jobs:
     - name: Make Kernel
       run: |
             cd ~
-            sudo curl -sL "https://raw.githubusercontent.com/tao1996/build_kernel/master/build_kernel.sh" > build-kernel.sh
+            sudo curl -sL "https://raw.githubusercontent.com/tanyuanman/build_kernel/master/build_kernel.sh" > build-kernel.sh
             sudo chmod 777 build-kernel.sh
             sudo bash ./build-kernel.sh
 
