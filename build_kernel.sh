@@ -1,7 +1,8 @@
 #!/bin/bash
-#内核源码地址
-KERNEL_URL=https://github.com/tanyuanman/android_kernel_xiaomi_mt6765.git
-#内核defconfig
+
+
+git clone https://github.com/tanyuanman/android_kernel_xiaomi_mt6765.git -b oreo
+git clone git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 gcc
 KERNEL_DEFCONFIG=cactus_defconfig
 
 #谷歌GCC4.9
